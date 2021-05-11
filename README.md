@@ -10,7 +10,7 @@
 
 > <a href="https://github.com/CB279/vue-3-cb-grid">grid</a>
 
-> <a href="https://github.com/CB279/vue-3-cb-side-nav">side-nav</a>
+> <a href="https://github.com/CB279/vue-3-cb-sidenav">sidenav</a>
 
 > <a href="https://github.com/CB279/vue-3-cb-paginate">paginate</a>
 

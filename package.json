@@ -1,7 +1,7 @@
 {
     "name": "@vue-cb/select",
     "version": "1.0.1",
-    "description": "vue,select",
+    "description": "vue 3,select",
     "main": "lib/index.js",
     "directories": {
         "lib": "lib"
@@ -14,7 +14,7 @@
         "url": "git+https://github.com/CB279/vue-3-cb-select.git"
     },
     "keywords": [
-        "vue",
+        "vue 3",
         "select"
     ],
     "author": "",

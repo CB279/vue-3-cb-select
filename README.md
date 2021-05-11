@@ -54,6 +54,10 @@ const state = reactive({
 | multiple    | boolean | -       |
 | placeholder | string  | -       |
 
+## Credit
+
+-   [Popperjs](https://popper.js.org)
+
 ## 📑 License
 
 [MIT License](./LICENSE)

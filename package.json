@@ -1,26 +1,29 @@
 {
-  "name": "@vue-cb/select",
-  "version": "1.0.0",
-  "description": "vue,select",
-  "main": "lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CB279/vue-3-cb-select.git"
-  },
-  "keywords": [
-    "vue",
-    "select"
-  ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CB279/vue-3-cb-select/issues"
-  },
-  "homepage": "https://github.com/CB279/vue-3-cb-select#readme"
+    "name": "@vue-cb/select",
+    "version": "1.0.1",
+    "description": "vue,select",
+    "main": "lib/index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CB279/vue-3-cb-select.git"
+    },
+    "keywords": [
+        "vue",
+        "select"
+    ],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/CB279/vue-3-cb-select/issues"
+    },
+    "homepage": "https://github.com/CB279/vue-3-cb-select#readme",
+    "dependencies": {
+        "popper.js": "^1.16.1"
+    }
 }

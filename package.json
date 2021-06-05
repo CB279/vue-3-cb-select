@@ -24,6 +24,6 @@
     },
     "homepage": "https://github.com/CB279/vue-3-cb-select#readme",
     "dependencies": {
-        "popper.js": "^1.16.1"
+        "@popperjs/core": "^2.9.0"
     }
 }

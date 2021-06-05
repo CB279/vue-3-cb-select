@@ -1,6 +1,6 @@
 {
     "name": "@vue-cb/select",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "vue 3,select",
     "main": "lib/index.js",
     "directories": {

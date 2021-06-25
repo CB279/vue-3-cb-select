@@ -17,7 +17,7 @@
                     @click="select(data)"
                 >
                     <slot name="li" :data="data">
-                        {{ data.label }}
+                        {{ data[fleidText] }}
                     </slot>
                 </div>
             </div>
@@ -35,8 +35,10 @@ export default {
     props: {
         datas: Array,
         multiple: Boolean,
-        modelValue: Object,
+        modelValue: [Number, String],
         placeholder: String,
+        fleidValue: String,
+        fleidText: String,
     },
     setup(props, { emit }) {
         const state = reactive({
@@ -94,14 +96,14 @@ export default {
                 if (bool) {
                     state.popper.update();
                     nextTick(() => {
-                        state.lis.children.forEach((n) => {
+                        for (const n of state.lis.children) {
                             if (n.classList.contains("active")) {
                                 state.lis.scrollTop =
                                     n.offsetTop -
                                     (state.lis.clientHeight / 2 -
                                         n.clientHeight / 2);
                             }
-                        });
+                        }
                     });
                 }
             }
@@ -137,7 +139,7 @@ export default {
         });
 
         const active = (d) => {
-            return dataSelected.value.find((data) => data && data === d);
+            return dataSelected.value.find((data) => data == d[props.fleidValue]);
         };
 
         const css = (d) => {
@@ -155,19 +157,25 @@ export default {
             if (d.disabled) return;
             if (props.multiple) {
                 if (active(d)) {
-                    props.modelValue.splice(props.modelValue.indexOf(d), 1);
+                    props.modelValue.splice(props.modelValue.indexOf(d[props.fleidValue]), 1);
                 } else {
-                    props.modelValue.push(d);
+                    props.modelValue.push(d[props.fleidValue]);
                 }
             } else {
-                emit("update:modelValue", d);
+                emit("update:modelValue", d[props.fleidValue]);
                 state.show = false;
             }
         };
 
         const textSelected = computed(() => {
             const label = dataSelected.value
-                .map((data) => data && data.label)
+                .reduce((f, data) => {
+                    const d = props.datas.find(d => d[props.fleidValue] == data)
+                    if (d) {
+                        f.push(d[props.fleidText])
+                    }
+                    return f
+                }, [])
                 .join(",");
             if (label) {
                 return label;

@@ -29,6 +29,17 @@
     border-bottom: 5px solid #565656;
 }
 
+.cb-select-disabled-true::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(239 239 239 / 20%);
+    z-index: 1;
+}
+
 .cb-select-placeholder {
     height: 100%;
     overflow: hidden;

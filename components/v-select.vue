@@ -1,5 +1,5 @@
 <template>
-    <div :ref="box" :class="['cb-select', 'cb-select-open-' + visible]">
+    <div :ref="box" :class="['cb-select', 'cb-select-open-' + visible, 'cb-select-disabled-' + disabled]">
         <div :ref="pre" class="cb-select-box" @click="show(!visible)">
             <slot name="placeholder">
                 <div class="cb-select-placeholder">
@@ -39,6 +39,7 @@ export default {
         placeholder: String,
         fleidValue: String,
         fleidText: String,
+        disabled: Boolean
     },
     setup(props, { emit }) {
         const state = reactive({
@@ -154,6 +155,7 @@ export default {
         };
 
         const select = (d) => {
+            if (props.disabled) return;
             if (d.disabled) return;
             if (props.multiple) {
                 if (active(d)) {

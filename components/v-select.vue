@@ -2,7 +2,7 @@
     <div :ref="box" :class="['cb-select', 'cb-select-open-' + visible, 'cb-select-disabled-' + disabled]">
         <div :ref="pre" class="cb-select-box" @click="show(!visible)">
             <slot name="placeholder">
-                <div class="cb-select-placeholder">
+                <div :class="['cb-select-placeholder', !labelSelected && 'cb-no-selected']">
                     {{ textSelected }}
                 </div>
             </slot>
@@ -169,8 +169,7 @@ export default {
             }
         };
 
-        const textSelected = computed(() => {
-            const label = dataSelected.value
+        const labelSelected = computed(() => dataSelected.value
                 .reduce((f, data) => {
                     const d = props.datas.find(d => d[props.fleidValue] == data)
                     if (d) {
@@ -178,9 +177,11 @@ export default {
                     }
                     return f
                 }, [])
-                .join(",");
-            if (label) {
-                return label;
+                .join(","))
+
+        const textSelected = computed(() => {
+            if (labelSelected.value) {
+                return labelSelected.value;
             } else {
                 return props.placeholder;
             }
@@ -201,6 +202,7 @@ export default {
             ul,
             lis,
             active,
+            labelSelected,
             css,
             select,
             textSelected,

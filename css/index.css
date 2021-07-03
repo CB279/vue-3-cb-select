@@ -44,6 +44,9 @@
     height: 100%;
     overflow: hidden;
 }
+.cb-select-placeholder.cb-no-selected {
+    color: #717171;
+}
 
 .cb-select-ul {
     box-shadow: 0 0 1px 1px #ddd;
